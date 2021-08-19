@@ -1,4 +1,4 @@
-class rope{
+class Roof{
 	constructor(body1,body2,pointA,pointB)
 	{
 		this.pointA=pointA
@@ -9,18 +9,13 @@ class rope{
 			bodyB:body2,
 			pointB:{x:this.pointA,y:this.pointB}
 		}
-
-	//create rope constraint here
 	
 	this.body = Bodies.rectangle(x, y, w, h, options);
     this.w = w;
     this.h = h;
     World.add(world, this.body);
 
-	}
-
-
-    //create display() here 
+	} 
 	display() {
 		let pos = this.body.position;
 	
