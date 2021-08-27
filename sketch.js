@@ -8,7 +8,7 @@ var roof;
 //Create multiple bobs, mulitple ropes varibale here
 var bob1,bob2,bob3,bob4,bob5;
 var rope1,rope2,rope3,rope4,rope5;
-
+var con,con2,con3,con4,con5;
 function setup() {
 	createCanvas(800, 600);
 	rectMode(CENTER);
@@ -46,6 +46,42 @@ function setup() {
 	roof = Bodies.rectangle(400,100,230,20,roof_options);
     World.add(world,roof);
 
+	con = Matter.Constraint.create({
+		pointA:{x:300,y:100},
+		bodyB:ball,
+		length:100,
+		stiffness:0.1 
+	   })
+	   World.add(world,con);
+	con2 = Matter.Constraint.create({
+		pointA:{x:350,y:100},
+		bodyB:ball,
+		length:100,
+		stiffness:0.1 
+	   })
+	   World.add(world,con2);
+	con3 = Matter.Constraint.create({
+		pointA:{x:400,y:100},
+		bodyB:ball,
+		length:100,
+		stiffness:0.1 
+	   })
+	   World.add(world,con3);
+	con4 = Matter.Constraint.create({
+		pointA:{x:450,y:100},
+		bodyB:ball,
+		length:100,
+		stiffness:0.1 
+	   })
+	   World.add(world,con4);
+    con5 = Matter.Constraint.create({
+		pointA:{x:500,y:100},
+		bodyB:ball,
+		length:100,
+		stiffness:0.1 
+	   })
+	   World.add(world,con5);
+
 	Engine.run(engine);
 	
   
@@ -58,8 +94,12 @@ function draw() {
   rect(roof.position.x,roof.position.y,230,20);
 
   //call display() to show ropes here
+  rope1.display();
+  rope2.display();
+  rope3.display();
+  rope4.display();
+  rope5.display();  
 
-  
   //create ellipse shape for multiple bobs here
   ellipse(bob1.position.x,bob1.position.y,20);
   ellipse(bob2.position.x,bob2.position.y,20);
