@@ -11,11 +11,8 @@ class rope{
 		}
 
 	//create rope constraint here
-	
-	this.body = Bodies.rectangle(x, y, w, h, options);
-    this.w = w;
-    this.h = h;
-    World.add(world, this.body);
+		this.body= Constraint.create(options)
+        World.add(world, this.body);
 
 	}
 
